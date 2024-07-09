@@ -6,6 +6,10 @@ from utils import *
 
 st.set_page_config(page_title="AI Dashboard", page_icon="📈")
 
+#Hide header
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 ## read files:
 topline_Inflation, cumulative_inflation_by_category = get_data()
 

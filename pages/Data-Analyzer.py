@@ -7,6 +7,10 @@ from openai import OpenAI
 
 st.set_page_config(page_title="AI Data Analyzer", page_icon="📈")
 
+#Hide header
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
